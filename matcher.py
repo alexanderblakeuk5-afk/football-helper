@@ -1,4 +1,4 @@
-from config_loader import config
+from env_loader import VK_USER_TOKEN
 from datetime import datetime
 from rapidfuzz import fuzz
 import requests
@@ -57,7 +57,7 @@ def days_until(date_text):
     return delta
 
 URL = "https://vk.com/nfl.perm?w=page-118923392_53372207"
-USER_TOKEN = config["vk_user_token"]
+USER_TOKEN = VK_USER_TOKEN
 
 def get_schedule_html():
 
