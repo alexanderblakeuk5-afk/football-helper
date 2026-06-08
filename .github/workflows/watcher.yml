@@ -1,0 +1,28 @@
+name: Football Watcher
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+  workflow_dispatch:
+
+jobs:
+  check:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -r requirements.txt
+
+      - run: python watcher.py
+        env:
+          VK_USER_TOKEN: ${{ secrets.VK_USER_TOKEN }}
+          VK_GROUP_TOKEN: ${{ secrets.VK_GROUP_TOKEN }}
+          VK_USER_ID: ${{ secrets.VK_USER_ID }}
