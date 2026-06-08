@@ -1,10 +1,14 @@
 import requests
 import random
 
-from config_loader import config
+from env_loader import VK_GROUP_TOKEN, VK_USER_ID
 
-TOKEN = config["vk_group_token"]
-USER_ID = config["vk_user_id"]
+params = {
+    "access_token": VK_GROUP_TOKEN,
+    "v": "5.199",
+    "peer_id": VK_USER_ID,
+    "message": message
+}
 
 
 def send_message(text):
