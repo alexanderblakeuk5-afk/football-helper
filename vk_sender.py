@@ -30,3 +30,5 @@ print("USER_ID =", VK_USER_ID)
 
 if __name__ == "__main__":
     send_message("Тест из vk_sender.py")
+
+# test

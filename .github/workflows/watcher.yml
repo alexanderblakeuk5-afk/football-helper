@@ -28,3 +28,5 @@ jobs:
           VK_USER_ID: ${{ secrets.VK_USER_ID }}
           VK_GROUP_ID: ${{ secrets.VK_GROUP_ID }}
           VK_STATE_POST_ID: ${{ secrets.VK_STATE_POST_ID }}
+
+# test
