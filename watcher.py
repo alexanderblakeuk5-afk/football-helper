@@ -1,7 +1,9 @@
-import json
-
 from matcher import find_matches
 from vk_sender import send_message
+from vk_storage import (
+    load_state,
+    save_state
+)
 
 TEAM = "Пермский период"
 
@@ -12,13 +14,9 @@ def check_schedule():
 
     current_matches = find_matches(TEAM)
 
-    with open(
-        "data/last_matches.json",
-        "r",
-        encoding="utf-8"
-    ) as f:
+    state = load_state()
 
-        old_matches = json.load(f)
+    old_matches = state["matches"]
 
     if current_matches == old_matches:
 
@@ -41,18 +39,7 @@ def check_schedule():
 
     send_message(message)
 
-    with open(
-        "data/last_matches.json",
-        "w",
-        encoding="utf-8"
-    ) as f:
-
-        json.dump(
-            current_matches,
-            f,
-            ensure_ascii=False,
-            indent=4
-        )
+    save_state(current_matches)
 
 
 if __name__ == "__main__":

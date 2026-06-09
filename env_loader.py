@@ -15,8 +15,14 @@ if os.path.exists("config.json"):
     VK_GROUP_TOKEN = config["vk_group_token"]
     VK_USER_ID = config["vk_user_id"]
 
+    VK_GROUP_ID = config["vk_group_id"]
+    VK_STATE_POST_ID = config["vk_state_post_id"]
+
 else:
 
     VK_USER_TOKEN = os.getenv("VK_USER_TOKEN")
     VK_GROUP_TOKEN = os.getenv("VK_GROUP_TOKEN")
     VK_USER_ID = os.getenv("VK_USER_ID")
+
+    VK_GROUP_ID = os.getenv("VK_GROUP_ID")
+    VK_STATE_POST_ID = os.getenv("VK_STATE_POST_ID")
