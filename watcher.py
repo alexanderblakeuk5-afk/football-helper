@@ -1,3 +1,5 @@
+print("WATCHER STARTED")
+
 from matcher import find_matches
 from vk_sender import send_message
 from vk_storage import (
