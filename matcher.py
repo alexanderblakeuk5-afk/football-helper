@@ -110,6 +110,9 @@ def find_matches(team_name):
 
         if is_match(team_name, line):
 
+            if days_until(current_date) < 0:
+                continue
+
             matches.append(
                 {
                     "date": current_date,
