@@ -40,12 +40,23 @@ from env_loader import (
     VK_STATE_POST_ID
 )
 
-def save_state(matches):
+def save_state(
+    team,
+    matches,
+    interval=5,
+    command="",
+    last_check=0
+):
 
     text = (
         "[STATE]\n\n" +
         json.dumps(
             {
+                "team": team,
+                "active_team": team,
+                "interval": interval,
+                "command": command,
+                "last_check": last_check,
                 "matches": matches
             },
             ensure_ascii=False,
